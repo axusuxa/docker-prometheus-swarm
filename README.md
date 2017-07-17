@@ -2,6 +2,8 @@
 
 A sample image that can be used as a base for collecting Swarm mode metrics in Prometheus
 
+Fork from "https://github.com/bvis/docker-prometheus-swarm"
+
 ## How to use it
 
 You can use the provided `docker-compose.yml` file as an example. You can deploy the full stack with the command:
