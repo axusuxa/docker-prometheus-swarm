@@ -66,8 +66,8 @@ services:
           cpus: '0.05'
           memory: 4M
 
-  php:
-    image: php:7.0-fpm
+  prom-filesd:
+    image: axus/prom-filesd:1.0
     ports:
       - "8000"
     networks:
