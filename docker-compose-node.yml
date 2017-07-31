@@ -69,7 +69,7 @@ services:
   prom-filesd:
     image: axus/prom-filesd:1.0
     ports:
-      - "8000"
+      - "8000:8000"
     networks:
       - monitoring
     deploy:
