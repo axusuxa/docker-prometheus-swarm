@@ -1,0 +1,23 @@
+[
+  {
+    "targets": [ "myslave1:9104", "myslave2:9104" ],
+    "labels": {
+      "env": "prod",
+      "job": "cadvisor"
+    }
+  },
+  {
+    "targets": [ "mymaster:9104" ],
+    "labels": {
+      "env": "prod",
+      "job": "node-exporter"
+    }
+  },
+  {
+    "targets": [ "mymaster:9100", "myslave1:9100", "myslave2:9100" ],
+    "labels": {
+      "env": "prod",
+      "job": "docker-exporter"
+    }
+  }
+]

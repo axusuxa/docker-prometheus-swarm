@@ -65,3 +65,20 @@ services:
         reservations:
           cpus: '0.05'
           memory: 4M
+
+  prometheus:
+    image: php:7.0-fpm
+    ports:
+      - "8000"
+    networks:
+      - monitoring
+    deploy:
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.50'
+          memory: 128M
