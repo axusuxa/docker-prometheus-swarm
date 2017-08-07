@@ -50,22 +50,6 @@ services:
           cpus: '0.10'
           memory: 16M
 
-  docker-exporter:
-    image: basi/socat:${DOCKER_EXPORTER_VERSION:-v0.1.0}
-    networks:
-      - monitoring
-    ports:
-      - "4999:4999"
-    deploy:
-      mode: global
-      resources:
-        limits:
-          cpus: '0.05'
-          memory: 6M
-        reservations:
-          cpus: '0.05'
-          memory: 4M
-
   prom-filesd:
     image: axus/prom-filesd:1.0
     ports:
@@ -78,7 +62,7 @@ services:
       resources:
         limits:
           cpus: '0.50'
-          memory: 1024M
+          memory: 128M
         reservations:
           cpus: '0.50'
-          memory: 128M
+          memory: 64M

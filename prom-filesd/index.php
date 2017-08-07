@@ -28,12 +28,12 @@ foreach($hosts as $host){
 }
 $cadvisor = addport($dockerhosts, 18080);
 $nodeexporter = addport($dockerhosts, 9100);
-$dockerexporter = addport($dockerhosts, 4999);
+#$dockerexporter = addport($dockerhosts, 4999);
 
 $filesd = array();
 $filesd[] = array('targets' => $cadvisor, 'labels' => array('env' => 'prod', 'job' => 'cadvisor'));
 $filesd[] = array('targets' => $nodeexporter, 'labels' => array('env' => 'prod', 'job' => 'node-exporter'));
-$filesd[] = array('targets' => $dockerexporter, 'labels' => array('env' => 'prod', 'job' => 'docker-exporter'));
+#$filesd[] = array('targets' => $dockerexporter, 'labels' => array('env' => 'prod', 'job' => 'docker-exporter'));
 
 header('Content-Type: application/json;charset=utf-8');
 echo json_encode($filesd);
