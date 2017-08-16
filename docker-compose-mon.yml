@@ -5,15 +5,11 @@ networks:
 
 services:
   alertmanager:
-    image: basi/alertmanager:${ALERTMANAGER_VERSION:-v0.1.0}
+    image: axus/alertmanager:latest
     networks:
       - monitoring
-      # - logging
     ports:
      - "9093:9093"
-    environment:
-      SLACK_API: ${SLACK_API:-YOURTOKENGOESHERE}
-      LOGSTASH_URL: http://logstash:8080/
     command: -config.file=/etc/alertmanager/config.yml
     deploy:
       mode: replicated
