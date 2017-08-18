@@ -39,3 +39,11 @@ services:
         reservations:
           cpus: '0.50'
           memory: 128M
+
+  alerta:
+    image: axus/alert-broker:latest
+    networks:
+      - monitoring
+    deploy:
+      mode: replicated
+      replicas: 1
