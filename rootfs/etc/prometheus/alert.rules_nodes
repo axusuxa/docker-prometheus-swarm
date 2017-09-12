@@ -16,7 +16,7 @@ ALERT high_memory_usage_on_node
   }
 
 ALERT high_la_usage_on_node
-  IF node_load5 > 50
+  IF node_load5 > 20
   FOR 5m
   ANNOTATIONS {
       summary = "HIGH LOAD AVERAGE WARNING ON '{{ $labels.instance }}'",
